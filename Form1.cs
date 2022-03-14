@@ -71,8 +71,14 @@ namespace RepasoLab7
                         datoTemp.Cuota = propiedades[i].Cuota;
                         resumen.Add(datoTemp);
                     }
+                    else
+                    {
+                        MessageBox.Show("Error!");
+                    }
                 }
             }
+            dataGridView1.DataSource = resumen;
+            dataGridView1.Refresh();
         }
     }
 }

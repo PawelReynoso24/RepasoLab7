@@ -60,6 +60,7 @@
             this.buttonOrdenarDatos.TabIndex = 2;
             this.buttonOrdenarDatos.Text = "Ordenar Datos";
             this.buttonOrdenarDatos.UseVisualStyleBackColor = true;
+            this.buttonOrdenarDatos.Click += new System.EventHandler(this.buttonOrdenarDatos_Click);
             // 
             // Form1
             // 

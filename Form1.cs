@@ -51,7 +51,13 @@ namespace RepasoLab7
             }
             reader.Close();
         }
-
+        private void CargarGrid()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = resumen;
+            dataGridView1.Refresh();
+        }
         private void buttonMostrarDatos_Click(object sender, EventArgs e)
         {
             CargarPropiedades("Propiedades.txt");
@@ -71,14 +77,15 @@ namespace RepasoLab7
                         datoTemp.Cuota = propiedades[i].Cuota;
                         resumen.Add(datoTemp);
                     }
-                    else
-                    {
-                        MessageBox.Show("Error!");
-                    }
                 }
             }
-            dataGridView1.DataSource = resumen;
-            dataGridView1.Refresh();
+            CargarGrid();
+        }
+
+        private void buttonOrdenarDatos_Click(object sender, EventArgs e)
+        {
+            resumen = resumen.OrderBy(c => c.Cuota).ToList();
+            CargarGrid();
         }
     }
 }

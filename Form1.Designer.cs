@@ -50,6 +50,7 @@
             this.buttonMostrarDatos.TabIndex = 1;
             this.buttonMostrarDatos.Text = "Mostrar Resumen";
             this.buttonMostrarDatos.UseVisualStyleBackColor = true;
+            this.buttonMostrarDatos.Click += new System.EventHandler(this.buttonMostrarDatos_Click);
             // 
             // buttonOrdenarDatos
             // 

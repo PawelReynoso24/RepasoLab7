@@ -60,6 +60,7 @@ namespace RepasoLab7
         }
         private void buttonMostrarDatos_Click(object sender, EventArgs e)
         {
+            buttonOrdenarDatos.Enabled = true;
             CargarPropiedades("Propiedades.txt");
             CargarPropietarios("Propietarios.txt");
 
@@ -84,8 +85,27 @@ namespace RepasoLab7
 
         private void buttonOrdenarDatos_Click(object sender, EventArgs e)
         {
+            buttonMayorMenor.Enabled = true;
             resumen = resumen.OrderBy(c => c.Cuota).ToList();
             CargarGrid();
+        }
+
+        private void buttonMayorMenor_Click(object sender, EventArgs e)
+        {
+            labelMenor1.Text = resumen[0].Cuota.ToString();
+            labelMenor2.Text = resumen[1].Cuota.ToString();
+            labelMenor3.Text = resumen[2].Cuota.ToString();
+
+            int ultimo = resumen.Count();
+            labelPropietario.Text = resumen[ultimo - 1].Apellido.ToString() + ", " + resumen[ultimo - 1].Nombre.ToString();
+            labelMayor1.Text = resumen[ultimo -1].Cuota.ToString();
+            labelMayor2.Text = resumen[ultimo -2].Cuota.ToString();
+            labelMayor3.Text = resumen[ultimo -3].Cuota.ToString();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
